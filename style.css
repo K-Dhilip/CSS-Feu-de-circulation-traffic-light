@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-color: black;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.set {
+  width: 140px;
+  border-radius: 5px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 60px solid rgb(20, 20, 20);
+  z-index: -1;
+  position: relative;
+  top: 210px;
+}
+
+.box::before {
+  position: absolute;
+  content: "";
+  top: -15px;
+  left: 29px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(31, 31, 31);
+  z-index: -1;
+}
+.box::after {
+  position: absolute;
+  content: "";
+  top: -195px;
+  left: 38px;
+  width: 12px;
+  height: 190px;
+
+  background-color: rgb(31, 31, 31);
+}
+.box {
+  position: relative;
+  padding: 10px 10px;
+  width: 90px;
+  background-color: rgb(31, 31, 31);
+  display: inline-block;
+  border-radius: 10px;
+  outline: 3px solid black;
+}
+
+.red {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 4px 1px 3px;
+  animation: redc 5s infinite;
+  animation-delay: 2s;
+}
+
+.yellow {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 4px 2px 3px;
+  animation: yellowc 5s infinite;
+  animation-delay: 3s;
+}
+.green {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(51, 51, 51);
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 4px 2px 3px;
+  animation: greenc 5s infinite;
+  animation-delay: 6s;
+}
+
+@keyframes redc {
+  from {
+    filter: drop-shadow(10px 10px 30px red);
+    background-color: red;
+  }
+  to {
+    background-color: rgb(51, 51, 51);
+  }
+}
+
+@keyframes yellowc {
+  from {
+    background-color: yellow;
+    filter: drop-shadow(10px 10px 30px yellow);
+  }
+  to {
+    background-color: rgb(51, 51, 51);
+  }
+}
+
+@keyframes greenc {
+  from {
+    background-color: rgb(0, 209, 0);
+    filter: drop-shadow(10px 0px 30px rgb(0, 255, 0));
+  }
+  to {
+    background-color: rgb(51, 51, 51);
+  }
+}
